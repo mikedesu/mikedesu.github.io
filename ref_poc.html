@@ -12,10 +12,10 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
 
 let value = params.url;
 
-let link = document.getElementById('link');
-link.innerHTML = '<a href="' + value + '">click here</a>'
+//let link = document.getElementById('link');
+//link.innerHTML = '<a href="' + value + '">click here</a>'
 
-//window.location = value;
+window.location = value;
 
 </script>
 
