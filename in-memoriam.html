@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+    <title>evildojo</title>
+
+    <link rel="stylesheet" href="terminal.min.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="syntax.css">
+
+
+    <style>
+
+        div.square {
+          border: solid 4px #999999;
+          background-color: #666666;
+          width: 50px;
+          height: 50px;
+      }
+
+
+      .components-grid {
+          display: grid;
+          grid-column-gap: 1.4em;
+          grid-template-columns: auto;
+          grid-template-rows: auto;
+      }
+
+      .image-grid {
+          display: grid;
+          grid-template-rows: auto;
+          display: grid;
+          grid-gap: 1em;
+          grid-template-rows: auto;
+          grid-template-columns: repeat(
+            auto-fit,
+            minmax(calc(var(--page-width) / 12), 1fr)
+        );
+      }
+
+      @media only screen and (min-width: 70em) {
+          .components-grid {
+            grid-template-columns: 3fr 9fr;
+        }
+    }
+
+
+    :root {
+        --global-font-size: 15px;
+        --global-line-height: 1.4em;
+        --global-space: 10px;
+        --font-stack: Menlo, Monaco, Lucida Console, Liberation Mono,
+        DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+        serif;
+        --mono-font-stack: Menlo, Monaco, Lucida Console, Liberation Mono,
+        DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+        serif;
+        --background-color: #222225;
+        --page-width: 60em;
+        --font-color: #e8e9ed;
+        --invert-font-color: #222225;
+        --secondary-color: #a3abba;
+        --tertiary-color: #a3abba;
+        --primary-color: #62c4ff;
+        --error-color: #ff3c74;
+        --progress-bar-background: #3f3f44;
+        --progress-bar-fill: #62c4ff;
+        --code-bg-color: #3f3f44;
+        --input-style: solid;
+        --display-h1-decoration: none;
+    }
+
+</style>
+
+<script src="highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body class="terminal">
+
+
+    <div class="container">
+        <div class="terminal-nav">
+            <header class="terminal-logo">
+                <div class="logo terminal-prompt"><a href="https://www.evildojo.com">www.evildojo.com</a></div>
+            </header>
+
+            <nav class="terminal-menu">
+                <ul typeof="BreadcrumbList">
+                    <li><a href="https://www.evildojo.com">home</a></li>
+                    <li><a href="https://www.evildojo.com/resume.pdf">resume</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+
+        <hr>
+
+        <p>
+            www.evildojo.com is in memoriam: <a href="#">https://www.evildojo.com/in-memoriam.html</a>
+        </p>
+
+
+        <hr>
+
+        <div class="components components-grid">
+
+            <aside id="menu">
+                
+                    <div class="image-grid">
+                    <img src="https://www.evildojo.com/dm-200x200.png" style="width:auto">
+                  
+
+                </div>
+                    <ul>
+                        <li>darkmage aka Mike Bell</li>
+
+                        <li><a href="#">twitter</a></li>
+                        <li><a href="#">linkedin</a></li>
+                        <li><a href="#">twitch</a></li>
+                        <li><a href="#">github</a></li>
+                        <li><a href="#">bugcrowd</a></li>
+                        <li><a href="#">soundcloud</a></li>
+                        <li><a href="#">paypal</a></li>
+                    
+                    </ul>
+                
+            </aside>
+
+            <main>      
+
+            <h1 id="in-memoriam">In Memoriam</h1>
+<h3 id="my-family">My family</h3>
+<ul>
+<li>Momma</li>
+<li>Cousin T.J.</li>
+<li>Grandpa Freddy</li>
+<li>Grandma Mary</li>
+<li>Uncle Pat</li>
+<li>Uncle Johnny</li>
+<li>My dog Winnie</li>
+<li>My dog Georgie</li>
+<li>My dog Buddy</li>
+</ul>
+<h3 id="from-the-lycaeum-irc-community">From the Lycaeum IRC community</h3>
+<ul>
+<li>otter</li>
+<li>sinned</li>
+<li>spectre</li>
+<li>wolfsblood</li>
+</ul>
+<h3 id="from-the-bemani-community">From the bemani community</h3>
+<ul>
+<li>oni+ / ONIPA / Raf / Rafael / Ace Love</li>
+</ul>
+<h3 id="from-the-san-antonio-super-smash-bros.-melee-community">From the San Antonio Super Smash Bros. Melee community</h3>
+<ul>
+<li>SOS</li>
+</ul>
+<h3 id="from-the-gnaa">From the GNAA</h3>
+<ul>
+<li>asshurt</li>
+</ul>
+<h3 id="from-the-irc-channel-lrh-on-efnet">From the IRC channel #LRH on efnet</h3>
+<ul>
+<li>emi</li>
+<li>douchebag</li>
+<li>litup</li>
+</ul>
+<h3 id="from-the-tech-community-in-general">From the Tech community in general</h3>
+<ul>
+<li>John McAfee</li>
+</ul>
+
+    <hr>
+
+    <section>
+        <footer>Copyright © 2013-2023 evildojo.com | darkmage | Mike Bell | Michael Steven Bell Jr. All Rights Reserved.</footer>
+    </section>
+
+    </main>
+</div>
+</div>
+
+
+</body>
+</html>
