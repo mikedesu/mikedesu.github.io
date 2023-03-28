@@ -1,144 +1,96 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en" class="h-100">
 <head>
-    <title>evildojo</title>
-
-    <link rel="stylesheet" href="terminal.min.css">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="syntax.css">
-
-
-    <style>
-
-      .components-grid {
-          display: grid;
-          grid-column-gap: 1.4em;
-          grid-template-columns: auto;
-          grid-template-rows: auto;
-      }
-
-      .image-grid {
-          display: grid;
-          grid-template-rows: auto;
-          display: grid;
-          grid-gap: 1em;
-          grid-template-rows: auto;
-          grid-template-columns: repeat(
-            auto-fit,
-            minmax(calc(var(--page-width) / 12), 1fr)
-        );
-      }
-
-      @media only screen and (min-width: 70em) {
-          .components-grid {
-            grid-template-columns: 3fr 9fr;
-        }
+  <meta charset="UTF-8">
+  <title>www.evildojo.com</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: black;
+      color: #666;
     }
 
-
-    :root {
-        --global-font-size: 15px;
-        --global-line-height: 1.4em;
-        --global-space: 10px;
-        --font-stack: Menlo, Monaco, Lucida Console, Liberation Mono,
-        DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
-        serif;
-        --mono-font-stack: Menlo, Monaco, Lucida Console, Liberation Mono,
-        DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
-        serif;
-        --background-color: #000;
-        --page-width: 60em;
-        --font-color: #fff;
-        --invert-font-color: #000;
-        --secondary-color: #a3abba;
-        --tertiary-color: #a3abba;
-        --primary-color: #999;
-        --error-color: #ff3c74;
-        --progress-bar-background: #3f3f44;
-        --progress-bar-fill: #62c4ff;
-        --code-bg-color: #3f3f44;
-        --input-style: solid;
-        --display-h1-decoration: none;
+    a {
+      color: #666;
     }
 
-</style>
+    a:hover {
+      color: #fff;
+    }
 
-<script src="highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
+    a:active {
+      color: #fff;
+    }
 
+    a:visited {
+      color: #333;
+    }
+
+    .twitter-timeline {
+        height:25px;
+    }
+
+    .navbar {
+        color: #666;
+        background-color: #000;
+    }
+    .navbar-brand {
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .nav-link {
+        font-family: 'Courier New', Courier, monospace;
+        color: #666;
+    }
+
+    .nav-link:hover {
+        color: #fff;
+    }
+  </style>
 </head>
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+  <div class="container">
+      <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+              <a class="navbar-brand" href="#">www.evildojo.com</a>
+            <a class="nav-link active" aria-current="page" href="#">home</a>
+                <a class="nav-link" href="https://linkedin.com/in/darkmage">linkedin</a>
+                <a class="nav-link" href="https://www.twitch.tv/darkmage666">twitch</a>
+                <a class="nav-link" href="https://www.github.com/mikedesu">github</a>
+                <a class="nav-link" href="https://www.bugcrowd.com/darkmagex6">bugcrowd</a>
+                <a class="nav-link" href="https://www.soundcloud.com/darkmagex6">soundcloud</a>
+                <a class="nav-link" href="https://www.vultr.com/?ref=8973037-8H">vultr</a>
+                <!--
+                -->
+        </div>
+    </nav>
 
-<body class="terminal">
-    <div class="container">
-        <div class="terminal-nav">
-            <header class="terminal-logo">
-                <div class="logo terminal-prompt"><a href="https://www.evildojo.com">www.evildojo.com</a></div>
-            </header>
-
-            <nav class="terminal-menu">
-                <ul typeof="BreadcrumbList">
-                    <li><a href="https://www.evildojo.com">home</a></li>
-                    <li><a href="https://www.evildojo.com/resume.pdf">resume</a></li>
-                </ul>
-            </nav>
+    <div class="row">
+        <div class="col-12">
+            <p>www.evildojo.com is in memoriam: <a href="https://www.evildojo.com/in-memoriam.html">https://www.evildojo.com/in-memoriam.html</a></p>
+            <p>Need a Linux Virtual Private Server? <a href="https://www.vultr.com/?ref=8973037-8H">FREE $100 VULTR CREDIT</a></p>
         </div>
     </div>
 
+    <div class="row">
+        <a class="twitter-timeline" data-height="700" data-theme="dark" href="https://twitter.com/therealdarkmage?ref_src=twsrc%5Etfw">Tweets by therealdarkmage</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+</div>
 
-    <div class="container">
-    
-        <p>
-            www.evildojo.com is in memoriam: <a href="https://www.evildojo.com/in-memoriam.html">https://www.evildojo.com/in-memoriam.html</a>
-        </p>
-
-
-        <hr>
-
-        <div class="components components-grid">
-
-            <aside id="menu">
-                
-                    <div class="image-grid">
-                    <img src="https://www.evildojo.com/dm-200x200.png" style="width:auto">
-                  
-
-                </div>
-                    <ul>
-                        <li>darkmage aka Mike Bell</li>
-
-                        <li><a href="https://www.twitter.com/therealdarkmage">twitter</a></li>
-                        <li><a href="https://linkedin.com/in/darkmage">linkedin</a></li>
-                        <li><a href="https://www.twitch.tv/darkmage666">twitch</a></li>
-                        <li><a href="https://www.github.com/mikedesu">github</a></li>
-                        <li><a href="https://www.bugcrowd.com/darkmagex6">bugcrowd</a></li>
-                        <li><a href="https://www.soundcloud.com/darkmagex6">soundcloud</a></li>
-                        
-                    </ul>
-                
-            </aside>
-
-            <main>      
-
-            <p>Welcome to the new evildojo website. I hope to make this my base of operations online. Please bear with me as I transfer content and begin to more fully utilize this platform.</p>
-
-            <hr>
-
-            I might refer to <kbd>some program</kbd> this way.
-
-            <pre><code class="language-javascript hljs javascript" data-lang="javascript">function testing() {
-    console.log("hello world");
-}</code></pre>
-
-    <hr>
-
-    <section>
-        <footer>Copyright © 2013-2023 evildojo.com | darkmage | Mike Bell | Michael Steven Bell Jr. All Rights Reserved.</footer>
-    </section>
 
     </main>
-</div>
-</div>
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container">
+            <span class="text-muted">aaaaaa</span>
+        </div>
+    </footer>
+<!--
+-->
 
-
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
 </body>
 </html>
+
