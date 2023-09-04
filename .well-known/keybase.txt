@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/darkmage
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.evildojo.com
+  * I am darkmage (https://keybase.io/darkmage) on keybase.
+  * I have a public key with fingerprint 2050 7F7F 1B0C 39B1 605A  C906 8799 F495 5664 FE59
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010108ff18ce4b3bbbe383b47b3b5937e7cda8e6d613abd8ed718315e16e47414e600a",
+      "fingerprint": "20507f7f1b0c39b1605ac9068799f4955664fe59",
+      "host": "keybase.io",
+      "key_id": "8799f4955664fe59",
+      "kid": "010108ff18ce4b3bbbe383b47b3b5937e7cda8e6d613abd8ed718315e16e47414e600a",
+      "uid": "492f0b824c4365a0b9b712f560454a19",
+      "username": "darkmage"
+    },
+    "service": {
+      "hostname": "www.evildojo.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1693801960,
+  "expire_in": 157680000,
+  "prev": "b86e0ef26d7306a86f8a4fbb219ce12e3665774227b80c2391427bb85c652f67",
+  "seqno": 76,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMNHAnicrVJtUFRVGN5VPobFCBVxBscprk1Awc79PPfeRdOgbDIJchQMo/Wee89d
+Lgt7l927i4QxMkgMorEZxOAAOYxGHzQ6DqExhUFJQOFADY1oZKIUDuAMwmojBt1l
+7F8/O+fHec97nud5n/ed891jKw0mY2XDfF2mtPi68YfuRo9B8udMlmBQlYoxSwlm
+R8sHypeQW7PaFQmzYDihb06WCU5ENKQghIjiKEizeszwFItYURI4BCRAUAKUOCSx
+BEcRDCIAolmaoBHAcQFLxGTFYUMup0txaLosiTM4K7MyAXGR4iEBcEYQeRxwLM/L
+NM8wANAyYnidmKu6AwzdHBTcyKyoek6/WJft/Qf+f/btWZajeVLGIUfSIk0BRsAh
+D1mClBmA0wwtEIG6HjdyOYQCpKMlwWUvEGwIezsR07NeRUSBwQY6eYQoKioyI6+S
+L6l5qllUC3S+06Vqqqjm66+5muZ0WwJsrdi5DEfQ+kjIChWHpM9SZ3iRy62oDsxC
+6EhRUwLKBOApDid4gCdi6IBTcSGrEkAwLOBwfQXqIK8uCTmAcCSTQGIpHAgckDmB
+liEkCV5EBIkoABiWpUmShRwukhRP0HoIOUYEDCkDFgu0VuhQMQsLdJ+CTdd0KzaH
+oHlceuM93W8EGYwmQ0jwisAnM5jCIv/9erPGxxeTyW2Hz1c+2DK+avudtqjLtx++
+csXfF3Qc/2rJd9BcfimqMTohLm9XMj9jyt5/I6g7I+LHtub60tLhRHNMSNOxgfg5
+Vbk1sDKLEtP7cm66Cqbqt7x0qvJe+f2p9ND4/jNriqP2Xumq/DoSbz/YUTZReDdL
+nnjYnJ2z4+POp1t6x0YFs/9PLtQ1mnr26OcfJvnrvn9nWgoyltb6/y70aPPtNS1D
+v34a5kjqH+OCLetCvKuVptrIiyPvmY1Wk+9me4c1vOhkg3l+Y4WNNYStiDve28hG
+wDlxb5wy80d75qoBw5Njgws9QuyF5sl3W7OXZrgN9m1b99hP982dqU4YGd1FnMhY
+VxeePb11Mn/fnucPp2WkftuasCbJ19hUcXWzb9NgRfvgAUIl7q5tWnTWxN+/7l/w
+/NL7Yu3uD4wXWuc8ZR2usJOn+6fT02wj0Y6u68/QHSCl6uK58xtv1NnvPWUaOTIU
+G1z2SdZHPy007LZX1dajTSG34sNby0p/5g+1vOW7Gr2+Ote8ujrCuv+2Lezasd5L
+U8R8+doNXad+e81e8rJWNfNCtfg+/Kv8m+f8UAn+4trIl2+mdZr5vFdno1sqdvx+
+9HKPBk0Td3YqrUMpT+zL8PpQaWpockzHg/WfRW1+Nmq4ZjhBSVlqMUdMzrYdiosd
+P5fo9Hno8c6ss/VHMlNitLrZnSf+Aa9GwxE=
+=vK1C
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/darkmage
+
+==================================================================
+
