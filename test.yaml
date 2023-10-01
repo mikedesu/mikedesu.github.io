@@ -1,12 +1,11 @@
 swagger: '2.0'
 info:
   title: Classic API Resource Documentation
-  description: this is a description with tags. <a href="https://www.evildojo.com" onclick="alert``">www.evildojo.com</a> Unicode: \u0064\u0065
+  description: this is a description with tags.  
   version: production
-basePath: /JSSResource/
+basePath: /
 produces:
-  - application/xml
-  - application/json
+  - text/html
 consumes:
   - application/xml
   - application/json
@@ -16,11 +15,12 @@ paths:
   /accounts:
     get:
       parameters:
-          - description: testing hello world
+          - description: testing hello world <a href="https://www.evildojo.com">www.evildojo.com</a> Unicode: \u0064\u0065
+
       responses:
         '200':
           description: No response was specified <b>testing bold tag</b> <i>testing italics</i> 
       tags:
-        - accounts
+        - accounts<b>bold</b>
       operationId: findAccounts
       summary: Finds all accounts
