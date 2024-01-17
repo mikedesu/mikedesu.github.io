@@ -1,22 +1,16 @@
 <html>
 <body>
 
-<div id="link"></div>
 
 <script>
-const params = new Proxy(new URLSearchParams(window.location.search), {
-  get: (searchParams, prop) => searchParams.get(prop),
-});
-
-// Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
-
-let value = params.url;
-
-let link = document.getElementById('link');
-link.innerHTML = '<a href="' + value + '">click here</a>'
-
-
+    function myFunction() {
+        window.location.href = document.getElementById("myText").value;
+    }
 </script>
+
+<input type="text" id="myText" value="http://www.evildojo.com"></input>
+
+<input type="button" onclick="myFunction()" value="Submit"></input>
 
 </body>
 </html>
