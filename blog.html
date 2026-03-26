@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JFG9SB4ZHV"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-JFG9SB4ZHV');
-</script>
-<link rel="icon" type="image/png" href="favicon.png"/>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-
 <title>evildojo.com | blog</title>
-<meta name="keywords" content="2ch, 4chan, 8ch, 8chan, ai, america, anonymous, artificial, bell, cannabis, capcom, cbd, code, coder, coders, coding, computer, drugs, game, gamer, games, gaming, hackers, hacking, hacks, hunter, indica, information, information security, infosec, intelligence, investigative, japanese, journalism, jrpg, knowledge, korea, mike, monster, netsec, network, network security, north, playing, program, programmer, programmers, programming, programs, role, rpg, russia, sativa, science, security, states, tech, technology, thc, training, united, us, usa, vaping, vapor, vaporize, vaporizer, video" />
+<meta name="keywords" content="ai, america, american, artificial, bell, code, coder, coders, coding, computer, game, gamer, games, gaming, hackers, hacking, hacks, hunter, information, information security, infosec, intelligence, investigative, japanese, journalism, jrpg, knowledge, michael, mike, monster, netsec, network, network security, north, playing, program, programmer, programmers, programming, programs, role, rpg, science, security, states, tech, technology, training, united, us, usa, video" />
 <!-- bootstrap css version 5 -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,10 +11,373 @@ gtag('config', 'G-JFG9SB4ZHV');
 <meta name="description" content="darkmage of evildojo" />
 <link href="bootstrap.min.css" rel="stylesheet">
 <style>
-body {font-family: 'Courier New', Courier, monospace;}
-.text-gray {color: #666;}
-.bg-black {background-color: #000;}
-.navbar-black {background-color: #000;color: #666;}
+:root {
+    --site-bg: #050505;
+    --panel-bg: #111111;
+    --panel-bg-strong: #171717;
+    --panel-border: #2f2f2f;
+    --panel-border-soft: #202020;
+    --text-main: #f1f1f1;
+    --text-muted: #9a9a9a;
+    --text-dim: #707070;
+    --link-base: #b9b9b9;
+    --link-hover: #93f5df;
+    --accent-cyan: #63d7d1;
+    --accent-green: #80d18d;
+    --shadow-glow: rgba(99, 215, 209, 0.15);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    color: var(--text-main);
+    background:
+        radial-gradient(circle at top, rgba(99, 215, 209, 0.08), transparent 28%),
+        linear-gradient(180deg, #090909 0%, var(--site-bg) 22%, #020202 100%);
+    font-family: "JetBrains Mono", "Fira Code", "IBM Plex Mono", "Consolas", "Courier New", monospace;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+}
+
+.bg-black {
+    background-color: transparent !important;
+}
+
+.text-gray {
+    color: var(--text-muted) !important;
+}
+
+.navbar-black {
+    background-color: var(--panel-bg);
+    color: var(--text-muted);
+}
+
+body > .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--panel-border);
+    background:
+        linear-gradient(180deg, rgba(22, 22, 22, 0.96), rgba(10, 10, 10, 0.96)) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+}
+
+.navbar > .container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding-left: clamp(1rem, 2.4vw, 2rem);
+    padding-right: clamp(1rem, 2.4vw, 2rem);
+}
+
+.navbar-brand {
+    margin-right: 1.5rem;
+    color: #f5f5f5 !important;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+}
+
+.navbar-brand::before {
+    content: "[ ";
+    color: var(--accent-cyan);
+}
+
+.navbar-brand::after {
+    content: " ]";
+    color: var(--accent-green);
+}
+
+.navbar-toggler {
+    border: 1px solid var(--panel-border) !important;
+    border-radius: 0.35rem;
+    padding: 0.45rem 0.6rem;
+    box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+    border-color: var(--accent-cyan) !important;
+    box-shadow: 0 0 0 0.2rem var(--shadow-glow) !important;
+}
+
+.navbar-collapse {
+    flex-basis: 100%;
+    min-width: 0;
+    width: 100%;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    width: 100%;
+}
+
+.nav-item {
+    min-width: 0;
+    margin: 0;
+}
+
+.nav-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem !important;
+    color: var(--text-muted) !important;
+    border: 1px solid transparent;
+    border-radius: 0.35rem;
+    font-size: 0.92rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 160ms ease, border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--text-main) !important;
+    border-color: var(--panel-border);
+    background-color: rgba(255, 255, 255, 0.03);
+    transform: translateY(-1px);
+}
+
+.nav-link.active,
+.nav-link[aria-current="page"] {
+    color: #ffffff !important;
+    border-color: rgba(99, 215, 209, 0.35);
+    background:
+        linear-gradient(180deg, rgba(99, 215, 209, 0.14), rgba(255, 255, 255, 0.02));
+    box-shadow: inset 0 0 0 1px rgba(99, 215, 209, 0.08);
+}
+
+hr {
+    max-width: min(1440px, calc(100% - 2rem));
+    margin: 0 auto;
+    border: 0;
+    border-top: 1px solid var(--panel-border);
+    opacity: 1;
+}
+
+#container {
+    width: min(100%, 1080px);
+    margin: 0 auto;
+    padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2.5vw, 2rem) 4rem;
+}
+
+#container > :first-child {
+    margin-top: 0;
+}
+
+#container > h1,
+#container > h2,
+#container > h3 {
+    position: relative;
+    margin-top: 0;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--panel-border);
+    border-left: 4px solid var(--accent-cyan);
+    background:
+        linear-gradient(90deg, rgba(99, 215, 209, 0.12), rgba(255, 255, 255, 0.02) 24%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #fafafa;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+h2 {
+    font-size: clamp(1.55rem, 3.6vw, 2.4rem);
+}
+
+h3 {
+    font-size: clamp(1.2rem, 2.8vw, 1.6rem);
+}
+
+p, li {
+    color: var(--text-main);
+    font-size: 1rem;
+}
+
+p,
+ul,
+ol,
+pre,
+table,
+blockquote {
+    margin-bottom: 1.4rem;
+}
+
+ul,
+ol {
+    padding-left: 1.4rem;
+}
+
+li + li {
+    margin-top: 0.35rem;
+}
+
+strong,
+b {
+    color: #ffffff;
+}
+
+a {
+    color: var(--link-base);
+    text-decoration-color: rgba(99, 215, 209, 0.35);
+    text-underline-offset: 0.16em;
+    transition: color 140ms ease, text-decoration-color 140ms ease;
+}
+
+a:hover,
+a:focus {
+    color: var(--link-hover);
+    text-decoration-color: var(--link-hover);
+}
+
+code,
+pre,
+kbd,
+samp {
+    font-family: "JetBrains Mono", "Fira Code", "IBM Plex Mono", "Consolas", monospace;
+}
+
+code {
+    padding: 0.15rem 0.35rem;
+    color: #d8fff7;
+    background-color: rgba(99, 215, 209, 0.1);
+    border: 1px solid rgba(99, 215, 209, 0.15);
+    border-radius: 0.25rem;
+}
+
+pre {
+    overflow-x: auto;
+    padding: 1rem 1.1rem;
+    color: #f3f3f3;
+    background-color: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-left: 4px solid var(--accent-green);
+    border-radius: 0.35rem;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+pre code {
+    padding: 0;
+    color: inherit;
+    background: transparent;
+    border: 0;
+}
+
+blockquote {
+    padding: 1rem 1.25rem;
+    color: #d8d8d8;
+    background: linear-gradient(90deg, rgba(128, 209, 141, 0.08), rgba(255, 255, 255, 0.02));
+    border: 1px solid var(--panel-border);
+    border-left: 4px solid var(--accent-green);
+}
+
+img,
+svg,
+video {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--panel-border-soft);
+}
+
+table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    border-collapse: collapse;
+    background-color: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+}
+
+th,
+td {
+    padding: 0.8rem 0.95rem;
+    border: 1px solid var(--panel-border-soft);
+}
+
+th {
+    color: #ffffff;
+    background-color: var(--panel-bg-strong);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+tr:nth-child(even) td {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+footer {
+    border-top: 1px solid var(--panel-border);
+    background:
+        linear-gradient(180deg, rgba(18, 18, 18, 0.98), rgba(8, 8, 8, 0.98)) !important;
+}
+
+footer p,
+footer a {
+    color: var(--text-muted) !important;
+}
+
+footer a:hover,
+footer a:focus {
+    color: var(--link-hover) !important;
+}
+
+@media (max-width: 991.98px) {
+    body > .navbar {
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+    }
+
+    .navbar-collapse {
+        margin-top: 0.85rem;
+        padding-top: 0.85rem;
+        border-top: 1px solid var(--panel-border);
+    }
+
+    .navbar-nav {
+        width: 100%;
+        gap: 0.25rem;
+    }
+
+    .nav-link {
+        padding: 0.7rem 0.8rem !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .navbar-brand {
+        font-size: 0.95rem;
+        letter-spacing: 0.16em;
+    }
+
+    #container {
+        padding-bottom: 3rem;
+    }
+
+    #container > h1,
+    #container > h2,
+    #container > h3 {
+        padding: 0.85rem 0.9rem;
+    }
+}
 </style>
 <!-- end style.html -->
 
@@ -47,7 +394,7 @@ body {font-family: 'Courier New', Courier, monospace;}
 
 </head>
 <body class="bg-black text-white">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark">
 <div class="container-fluid">
 <a target="_blank" class="navbar-brand" href="https://www.evildojo.com">evildojo.com</a>
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,7 +402,7 @@ body {font-family: 'Courier New', Courier, monospace;}
 </button>
 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-<li class="nav-item"><a target="_blank" class="nav-link active" aria-current="page" href="https://notevildojo.com">Home</a></li>
+<li class="nav-item"><a target="_blank" class="nav-link active" aria-current="page" href="https://www.evildojo.com">Home</a></li>
 <li class="nav-item"><a target="_blank" class="nav-link" href="https://evildojo.itch.io">itch.io</a></li>
 <li class="nav-item"><a target="_blank" class="nav-link" href="https://www.youtube.com/@evildojo666">Youtube</a></li>
 <li class="nav-item"><a target="_blank" class="nav-link" href="https://www.twitch.tv/evildojo666">Twitch</a></li>
