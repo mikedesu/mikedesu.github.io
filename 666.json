@@ -1,3 +1,12 @@
 {
-        "html": { "a": "<img src=\"https://www.evildojo.com/dm.png\">" }
+    "type": "rich",
+    "version": "1.0",
+    "provider_name": "PROVMARK_ab12",
+    "provider_url": "https://www.evildojo.com/PROVURLMARK_ab12",
+    "author_name": "AUTHMARK_ab12",
+    "author_url": "https://www.evildojo.com/AUTHURLMARK_ab12",
+    "title": "TITLEMARK_ab12",
+    "html": "<h1>HTMLMARK_ab12</h1>",
+    "width": 100,
+    "height": 100
 }
